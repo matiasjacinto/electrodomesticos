@@ -1,0 +1,258 @@
+/*font-family: 'Open Sans', sans-serif;*/
+/*:root {
+  --azul: #051d3b;
+  --blanco: #fafafa;
+  --font-family: "Montserrat", sans-serif;
+}
+var(--azul)*/
+:root {
+  --green: #6dc7c7;
+  --green2:#ace1e1 ;
+  --celeste: #6da9ed;
+  --hover: #6dc7c7;
+  --gris: #ccc;
+}
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  line-height: 22px;
+}
+header {
+  background-color: var(--green);
+  padding: 1px 0;
+}
+header h1 {
+  color: var(--blanco);
+  font-size: 2.5rm;
+  font-weight: 100; /*hace mas fina la letra, lo sacamos de google font que vinculamos*/
+  font-style: italic;
+  display: inline-block; /*para poner al lado del logo*/
+  position: relative; /*para poder variar el posicionamiento*/
+  bottom: 35px; /*subo la palabra 35 px para que quede a la mitad del logo*/
+}
+nav {
+  background-color: var(--green2);
+  margin-bottom: 30px; /*separamos, le damos margen el nav de la imagen que esta dentro de main*/
+}
+
+nav ul {
+  list-style: none; /*elimina los puntitos que pone adelante de las palabras*/
+  margin: 0;
+  padding: 0;
+}
+nav ul li {
+  width: 16%;
+  display: inline-block;
+}
+nav ul li a {
+  color: var(--blanco);
+  text-decoration: none; /*saca el subrrayado*/
+  display: block;
+  text-align: center;
+  padding: 5px 0;
+}
+nav ul li a:hover {
+  background-color: var(--hover);
+}
+nav ul li a.activo {
+  background-color: var(--hover);
+  /*esto es para poner el color para saber que se visito la pagina*/
+}
+footer {
+  background-color: var(--green2);
+  padding: 15px 0;
+  text-align: center;
+  clear: both; /*el elementto va de punta a punta, hace como si le pusieramos un enter */
+}
+.holder {
+  max-width: 960px; /*para centrar el nav y todo el contenid0*/
+  margin: 0 auto;
+}
+h2 {
+  color: var(--blue);
+  font-weight: 400;
+}
+
+.bienvenidos {
+  width: 75%;
+  float: left;
+  box-sizing: border-box; /*para que respete el 75% y la caja del otro lado no ciga dado que nos pasamos del 100%, los 2px del padiing van a estar dentro de los 75%*/
+  padding-right: 50px;
+}
+.bienvenidos p {
+  font-size: 22px;
+  line-height: 35px;
+}
+.testimonios {
+  width: 25%;
+  float: right;
+}
+.testimonio {
+  padding: 12px;
+  background-color: var(--gris);
+}
+.testimonio .cita {
+  font-weight: bold;
+  font-size: 20px;
+  font-style: italic;
+  display: block; /*para que las cajas cita y autor que estan dentro de testimonios ocupen su lugar*/
+}
+.testimonio .autor {
+  font-size: 12px;
+  display: block;
+  text-align: center;
+}
+
+.historia p {
+  font-size: 13px;
+}
+
+.personas {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.persona {
+  width: 18%;
+  border: 2px solid var(--hover);
+  border-radius: 15px;
+  text-align: center;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.persona img {
+  max-width: 75%;
+  border-radius: 50%;
+  box-shadow: 0 0 5px var(--gris);
+}
+.persona h5,
+.persona h6 {
+  margin: 0;
+  color: var(--celeste);
+  font-weight: normal;
+}
+
+.servicios {
+  border: 1px solid var(--blanco);
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+.servicios img {
+  margin-bottom: 10px;
+}
+.servicios .info {
+  max-width: 75%;
+}
+.servicios .info h4 {
+  color: var(--celeste);
+  font-size: 23px;
+  font-style: italic;
+  font-weight: 500;
+  border-bottom: 1px solid var(--hover);
+  padding-bottom: 10px;
+  margin-bottom: 8px;
+}
+.servicios .info p {
+  font-size: 13px;
+  line-height: 20px;
+}
+.servicios:nth-child(odd) img {
+  /* tener en cuenta que el primer element es 0 por eso la primer foto esta a la derecha*/
+  float: left;
+  margin: 0 16px 0 0;
+}
+.servicios:nth-child(odd) info {
+  float: left;
+}
+.servicios:nth-child(even) img {
+  float: right;
+  margin: 0 0 0 16px;
+}
+.servicios:nth-child(even) .info {
+  float: right;
+}
+
+.galeria .foto {
+  border: 1px solid var(--blanco);
+  /*display: inline-block;*/
+  float: left;
+  padding: 5px;
+  width: 18%;
+  box-sizing: border-box;
+  margin-left: 2.5%;
+  margin-bottom: 10px;
+}
+.galeria .foto img {
+  width: 100%;
+  display: block;
+}
+.galeria .foto:nth-child(5n + 1) {
+  margin-left: 0;
+  border-color: blueviolet;
+}
+.galeria .foto:nth-child(3) {
+  background-color: burlywood;
+}
+
+.contacto,
+.redes {
+  width: 50%;
+  box-sizing: border-box;
+}
+.contacto {
+  float: left;
+  border-right: 2px solid var(--hover);
+}
+.redes {
+  float: right;
+  padding-left: 10px;
+}
+.formulario input,
+.formulario textarea {
+  background-color: var(--blanco);
+  border-radius: 5px;
+  border: 2px solid var(--blue);
+  padding: 5px;
+  width: 93%;
+}
+.formulario label {
+  width: 22%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.formulario textarea {
+  resize: none;
+  height: 200px;
+}
+.formulario input[type="submit"] {
+  width: auto;
+  background-color: var(--blue);
+  color: var(--blanco);
+  box-shadow: 0 0 5px var(--gris);
+}
+.centrar {
+  text-align: center;
+}
+
+.fas {
+  font-size: 50px;
+  color: var(--blue);
+  border: solid 4px var(--celeste);
+  border-radius: 50%;
+}
+.fab {
+  font-size: 50px;
+  color: var(--blue);
+  border: solid 2px var(--celeste);
+  border-radius: 50%;
+}
+.redes ul {
+  list-style: none;
+}
+.redes ul li {
+  margin-bottom: 20px;
+}
