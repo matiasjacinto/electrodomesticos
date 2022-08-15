@@ -25,12 +25,12 @@
 
     <nav>
       <ul class="holder">
-        <li><a href="/">Tv Audio y Video</a></li>
-        <li><a href="/notbook_movil">Notbook y Celulares</a></li>
-        <li><a href="/electrodomesticos">Electrodomesticos</a></li>
-        <li><a href="/hogar">Hogar</a></li>
-        <li><a href="/herramientas">Herramientas</a></li>
-        <li><a href="/contacto">contacto</a></li>
+        <li><a href="/" class="{{#if isHome}}activo{{/if}}">Tv Audio y Video</a></li>
+        <li><a href="/notbook_movil"class="{{#if isNotbook_movil}}activo{{/if}}" >Notbook y Celulares</a></li>
+        <li><a href="/electrodomesticos"class="{{#if isElectrodomesticos}}activo{{/if}}" >Electrodomesticos</a></li>
+        <li><a href="/hogar" class="{{#if isHogar}}activo{{/if}}">Hogar</a></li>
+        <li><a href="/herramientas" class="{{#if isHerramientas}}activo{{/if}}">Herramientas</a></li>
+        <li><a href="/contacto" class="{{#if isContacto}}activo{{/if}}">contacto</a></li>
       </ul>
     </nav>
     {{{body}}}
