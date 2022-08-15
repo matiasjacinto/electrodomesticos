@@ -12,6 +12,7 @@ var electrodomesticosRouter = require("./routes/electrodomesticos");
 var hogarRouter = require("./routes/hogar");
 var herramientasRouter = require("./routes/herramientas");
 var contactoRouter = require("./routes/contacto");
+var loginRouter = require("./routes/admin/login");
 
 var app = express();
 
@@ -31,6 +32,7 @@ app.use("/electrodomesticos", electrodomesticosRouter);
 app.use("/hogar", hogarRouter);
 app.use("/herramientas", herramientasRouter);
 app.use("/contacto", contactoRouter);
+app.use("/admin/login", loginRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
