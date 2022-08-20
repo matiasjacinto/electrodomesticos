@@ -1,0 +1,47 @@
+<h3>soy ofertas</h3>
+<div>
+  <div>
+    <p>bienvenido
+      {{usuario}}
+      <a>cerrar sesión <i class="fa-solid fa-right-from-bracket"></i></a></p>
+  </div>
+  <div>
+    <div>
+      <h3>listado de ofertas del mes</h3>
+      <div>
+        <a href=""> nuevo <i class="fa-solid fa-plus"></i></a>
+      </div>
+    </div>
+    <div>
+      <table class="">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>titulo</th>
+            <th>acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each ofertas}}
+            <tr>
+              <th>{{id}}</th>
+              <td>{{titulo}}</td>
+              <td>
+                <a href=""><i class="fa-solid fa-pencil"></i>modificar</a>
+                <a href=""><i class="fa-solid fa-trash"></i>eliminar</a>
+              </td>
+            </tr>
+          {{/each}}
+        </tbody>
+
+      </table>
+    </div>
+  </div>
+
+</div>
+{{! 
+base de datos electrodomesticos
+interaccion con tabla ofertas 
+que tiene    
+   id-titulo-subtitulo-cuerpo
+vinculacion models>ofertasModels.js }}

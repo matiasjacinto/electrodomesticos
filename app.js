@@ -6,6 +6,8 @@ var logger = require("morgan");
 
 require("dotenv").config();
 
+var session = require("express-session");
+
 var indexRouter = require("./routes/index");
 var notbook_movilRouter = require("./routes/notbook_movil");
 var electrodomesticosRouter = require("./routes/electrodomesticos");
@@ -13,6 +15,7 @@ var hogarRouter = require("./routes/hogar");
 var herramientasRouter = require("./routes/herramientas");
 var contactoRouter = require("./routes/contacto");
 var loginRouter = require("./routes/admin/login");
+var adminOfertasRouter = require("./routes/admin/ofertas");
 
 var app = express();
 
@@ -25,7 +28,26 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
-
+app.use(
+  session({
+    secret: "contraseñaelectrodomesticos",
+    resave: false,
+    saveUninitialized: true,
+    // cookie: { maxAge: 60000 },
+  })
+);
+secured = async function (req, res, next) {
+  try {
+    console.log(req.session.id_usuario);
+    if (req.session.id_usuario) {
+      next();
+    } else {
+      res.redirect("/admin/login");
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
 app.use("/", indexRouter);
 app.use("/notbook_movil", notbook_movilRouter);
 app.use("/electrodomesticos", electrodomesticosRouter);
@@ -33,6 +55,7 @@ app.use("/hogar", hogarRouter);
 app.use("/herramientas", herramientasRouter);
 app.use("/contacto", contactoRouter);
 app.use("/admin/login", loginRouter);
+app.use("/admin/ofertas", secured, adminOfertasRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

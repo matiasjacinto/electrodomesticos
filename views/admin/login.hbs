@@ -2,7 +2,7 @@
   <div class="contacto">
 
     <h2>administrador</h2>
-    <form action="" method="" class="formulario">
+    <form action="/admin/login" method="post" class="formulario">
       <p>
         <label for="usuario">Usuario</label>
         <input type="text" name="usuario" id="usuario" />
@@ -16,6 +16,9 @@
         <input type="submit" value="Enviar" />
       </p>
     </form>
+    {{#if error}}
+      <p>Usuario y/o contraseña incorrecto</p>
+    {{/if}}
 
   </div>
 
