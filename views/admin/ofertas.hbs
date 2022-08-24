@@ -3,13 +3,16 @@
   <div>
     <p>bienvenido
       {{usuario}}
-      <a>cerrar sesión <i class="fa-solid fa-right-from-bracket"></i></a></p>
+      <a href="/admin/login/logout">cerrar sesión
+        <i class="fa-solid fa-right-from-bracket"></i></a></p>
   </div>
   <div>
     <div>
       <h3>listado de ofertas del mes</h3>
       <div>
-        <a href=""> nuevo <i class="fa-solid fa-plus"></i></a>
+        <a href="/admin/ofertas/agregar">
+          nuevo
+          <i class="fa-solid fa-plus"></i></a>
       </div>
     </div>
     <div>
@@ -27,8 +30,12 @@
               <th>{{id}}</th>
               <td>{{titulo}}</td>
               <td>
-                <a href=""><i class="fa-solid fa-pencil"></i>modificar</a>
-                <a href=""><i class="fa-solid fa-trash"></i>eliminar</a>
+                <a href="/admin/ofertas/modificar/{{id}}"><i
+                    class="fa-solid fa-pencil"
+                  ></i>modificar</a>
+                <a href="/admin/ofertas/eliminar/{{id}}"><i
+                    class="fa-solid fa-trash"
+                  ></i>eliminar</a>
               </td>
             </tr>
           {{/each}}

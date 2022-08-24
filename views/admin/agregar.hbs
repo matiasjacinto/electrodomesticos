@@ -1,0 +1,29 @@
+<main class="holder">
+  <div class="contacto">
+
+    <h2>Ofertas de la Semana</h2>
+    <form action="/admin/ofertas/agregar" method="post" class="formulario">
+      <div>
+        <label for="">Titulo</label>
+        <input type="text" name="titulo" id="titulo" />
+      </div>
+      <div>
+        <label for="">Subtitulo</label>
+        <textarea type="text" name="subtitulo" id="subtitulo"></textarea>
+      </div>
+      <div>
+        <label for="">Cuerpo</label>
+        <textarea type="text" name="cuerpo" id="cuerpo"></textarea>
+      </div>
+      <div class="centrar">
+        <button type="submit">Agregar
+        </button>
+      </div>
+    </form>
+    {{#if message}}
+      <p>{{message}}</p>
+    {{/if}}
+
+  </div>
+
+</main>

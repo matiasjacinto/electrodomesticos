@@ -1,0 +1,43 @@
+<main class="holder">
+  <div class="contacto">
+
+    <h2> modificar Ofertas de la Semana</h2>
+    <form action="/admin/ofertas/modificar" method="post" class="formulario">
+      <input type="hidden" name="id" value={{oferta.id}} />
+      <div>
+        <label for="">Titulo</label>
+        <input
+          type="text"
+          name="titulo"
+          value="{{oferta.titulo}}"
+          id="titulo"
+        />
+      </div>
+      <div>
+        <label for="">Subtitulo</label>
+        <textarea
+          type="text"
+          name="subtitulo"
+          id="subtitulo"
+        >{{oferta.subtitulo}}</textarea>
+      </div>
+      <div>
+        <label for="">Cuerpo</label>
+        <textarea
+          type="text"
+          name="cuerpo"
+          id="cuerpo"
+        >{{oferta.cuerpo}}</textarea>
+      </div>
+      <div class="centrar">
+        <button type="submit">Modificar
+        </button>
+      </div>
+    </form>
+    {{#if message}}
+      <p>{{message}}</p>
+    {{/if}}
+
+  </div>
+
+</main>
