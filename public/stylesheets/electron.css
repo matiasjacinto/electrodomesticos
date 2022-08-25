@@ -68,134 +68,8 @@ footer {
   max-width: 960px; /*para centrar el nav y todo el contenid0*/
   margin: 0 auto;
 }
-h2 {
-  color: var(--blue);
-  font-weight: 400;
-}
 
-.bienvenidos {
-  width: 75%;
-  float: left;
-  box-sizing: border-box; /*para que respete el 75% y la caja del otro lado no ciga dado que nos pasamos del 100%, los 2px del padiing van a estar dentro de los 75%*/
-  padding-right: 50px;
-}
-.bienvenidos p {
-  font-size: 22px;
-  line-height: 35px;
-}
-.testimonios {
-  width: 25%;
-  float: right;
-}
-.testimonio {
-  padding: 12px;
-  background-color: var(--gris);
-}
-.testimonio .cita {
-  font-weight: bold;
-  font-size: 20px;
-  font-style: italic;
-  display: block; /*para que las cajas cita y autor que estan dentro de testimonios ocupen su lugar*/
-}
-.testimonio .autor {
-  font-size: 12px;
-  display: block;
-  text-align: center;
-}
 
-.historia p {
-  font-size: 13px;
-}
-
-.personas {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
-}
-.persona {
-  width: 18%;
-  border: 2px solid var(--hover);
-  border-radius: 15px;
-  text-align: center;
-  padding: 8px;
-  box-sizing: border-box;
-}
-
-.persona img {
-  max-width: 75%;
-  border-radius: 50%;
-  box-shadow: 0 0 5px var(--gris);
-}
-.persona h5,
-.persona h6 {
-  margin: 0;
-  color: var(--celeste);
-  font-weight: normal;
-}
-
-.servicios {
-  border: 1px solid var(--blanco);
-  border-radius: 8px;
-  padding: 10px;
-  margin-bottom: 10px;
-  overflow: hidden;
-}
-.servicios img {
-  margin-bottom: 10px;
-}
-.servicios .info {
-  max-width: 75%;
-}
-.servicios .info h4 {
-  color: var(--celeste);
-  font-size: 23px;
-  font-style: italic;
-  font-weight: 500;
-  border-bottom: 1px solid var(--hover);
-  padding-bottom: 10px;
-  margin-bottom: 8px;
-}
-.servicios .info p {
-  font-size: 13px;
-  line-height: 20px;
-}
-.servicios:nth-child(odd) img {
-  /* tener en cuenta que el primer element es 0 por eso la primer foto esta a la derecha*/
-  float: left;
-  margin: 0 16px 0 0;
-}
-.servicios:nth-child(odd) info {
-  float: left;
-}
-.servicios:nth-child(even) img {
-  float: right;
-  margin: 0 0 0 16px;
-}
-.servicios:nth-child(even) .info {
-  float: right;
-}
-
-.galeria .foto {
-  border: 1px solid var(--blanco);
-  /*display: inline-block;*/
-  float: left;
-  padding: 5px;
-  width: 18%;
-  box-sizing: border-box;
-  margin-left: 2.5%;
-  margin-bottom: 10px;
-}
-.galeria .foto img {
-  width: 100%;
-  display: block;
-}
-.galeria .foto:nth-child(5n + 1) {
-  margin-left: 0;
-  border-color: blueviolet;
-}
-.galeria .foto:nth-child(3) {
-  background-color: burlywood;
-}
 
 .contacto,
 .redes {
@@ -204,12 +78,15 @@ h2 {
 }
 /* .contacto { 
   float: left;
+  display: flex;
+  justify-content: center; 
   border-right: 2px solid var(--hover);
-}*/
-.redes {
+}  */
+/* .redes {
   float: right;
   padding-left: 10px;
-}
+}  */
+
 .formulario input,
 .formulario textarea {
   /* background-color: var(--blanco); */
@@ -236,9 +113,9 @@ h2 {
 }
 .centrar {
   text-align: center;
-}
+} 
 
-.fas {
+/* .fas {
   font-size: 50px;
   color: var(--blue);
   border: solid 4px var(--celeste);
@@ -255,4 +132,51 @@ h2 {
 }
 .redes ul li {
   margin-bottom: 20px;
+} */
+/*sugerencias*/
+.holder-ofertas {
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 60px;
+}
+.sugerencia {
+  display: flex;
+  justify-content: center;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+.caja {
+  width: 200px;
+  margin: 20px;
+  border: 15px solid #fff;
+  box-shadow: 0 5px 35px rgba(0, 0, 0, 0.6);
+}
+
+.imgcaja {
+  position: relative;
+  width: 100%;
+  height: 80px;
+}
+.imgcaja img {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+}
+.texto {
+  padding: 15px 0 5px;
+}
+.texto h3 {
+  color: #111;
+  text-align: center;
+}
+.texto h4,
+p {
+  color: #111;
+  text-align: center;
 }
